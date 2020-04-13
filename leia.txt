@@ -1,0 +1,14 @@
+Então, tem aí uma página de novo usuário pra vc adicionar novos usuários.
+As senhas nos banco estão criptografas, elas são as seguintes:
+    login: usuario e senha: 123456
+    login: admin e senha: 123456
+    login: master e senha: 123456
+
+A classe Painel é onde tem os nossos métodos que vão verificar se o usuário pode ou não acessar aquele menu ou página.
+Então quanto maior o cargo do usuário (em número) maior será o privilégio dele, o 1 é o nível de usuário, é o mais baixo, o mais alto é o master, então o master tem acesso a tudo o que o usuário tem, mas o usuário não tem acesso a tudo o que o master ou o admin tem.
+
+No config tem a nossa conexão com o banco de dados e algumas outras coisas como o carregamento dinâmico de classes.
+
+Por mais que o usuário de cargo 1 tente acessar uma página de nível 3 ele não irá conseguir e vai ver uma página de "negado" para ele.
+
+Aí em todo menu que tu quiser que seja só exclusivo pra um tipo de cargo vc adiciona o verificaPermissaoMenu() com o nível do usuário, desse jeito só usuários que tenha aquele cargo => vão poder acessar, e a mesma coisa funciona pra página, é só adicionar verificaPermissaoPagina() com o nível do cargo no início da página.
